@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #670000, #db0000, #ff2d2d);
+    padding: 10px;
+}
+.card{
+    width: 22rem;
+    height: 32rem;
+    margin: 10rem auto 0;
+    perspective: 1000px;
+}
+.card-inner{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.front, .back{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front{
+    background: url(images/user.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+}
+.front h2{
+    font-weight: 600;
+}
+.front p{
+    color: #db0000;
+    font-size: 1rem;
+}
+.front button{
+    width: 7.5rem;
+    border: 1px solid#fff;
+    background: transparent;
+    border-radius: 3rem;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    color: #fff;
+}
+.back{
+    background: #fff;
+    color: #333;
+    padding: 1.25rem 2.5rem;
+    transform: rotateY(180deg);
+}
+.back h1{
+    font-size: 2.5rem;
+    line-height: 3.40rem;
+    margin-bottom: 10px;
+}
+.back h1 span{
+    font-weight: 400;
+}
+.back p{
+    font-size: 12px;
+}
+.back p span{
+    font-weight: 600;
+}
+.back img{
+    width: 7.5rem;
+}
+.row{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+.col{
+    flex: 1;
+    text-align: center;
+    color: #555;
+    font-size: 1rem;
+    position: relative;
+}
+.col h2{
+    font-size: 1.25rem;
+}
+.col p{
+    margin-top: 5px;
+}
+.back button{
+    background: #ff2d2d;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 8px 25px;
+    border-radius: 2rem;
+    font-size: 1rem;
+    margin-right: 15px;
+    box-shadow: 0 8px 10px rgba(120, 0, 17, 0.3);
+    cursor: pointer;
+}
+.back a{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+.back a img{
+    width: 50%;
+}
+.card:hover .card-inner{
+    transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 375px){
+    .card{
+        width: 20rem;
+        height: 30rem;
+        margin: 6rem auto 0;
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        margin-top: 1.55rem;
+    }
+}
